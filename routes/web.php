@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route for the welcome page
 Route::get('/', function () {
-    return view('welcome');
+    return view('tasks.index'); // Ensure you have an index.blade.php file in resources/views
 });
+
+// Resource routes for TaskController
+Route::resource('tasks', TaskController::class);
